@@ -6,8 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,100;1,300&display=swap');
+      :root {
+        --yellow: #ffd602;
+        --red: #d5040a;
+        --blue: #036cb6;
+      }
+
       /* Tamaño principal */
       body {
+        font-family: 'Lato', sans-serif;
         height: 100vh;
         margin: 0;
         overflow: hidden;
@@ -22,6 +30,16 @@
       .container {
         position: absolute;
         z-index: 1;
+
+        display: grid;
+        grid-template-columns: 55% 45%;
+        grid-template-rows: 20% 50% 30%;
+        grid-template-areas:
+          'nav     aside'
+          'section aside'
+          'footer  aside';
+        height: 100%;
+        width: 100%;
       }
 
       /* Tamaño del loader (Contenedor)*/
