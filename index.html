@@ -5,6 +5,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      /* Tamaño principal */
+      body {
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      /* Cambiamos el div con la clase page como relativo para poder mostrar el loader primero */
+      .page {
+        position: relative;
+        height: 100vh;
+      }
+
+      .container {
+        position: absolute;
+        z-index: 1;
+      }
+
+      /* Tamaño del loader (Contenedor)*/
+      .loader {
+        background: rgb(253, 253, 253);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute; /* Posicion Absoluta */
+        z-index: 3;
+
+        /* Indicamos el keyframes de la animacion que vamos a utilizar en este caso: loader*/
+        animation: loader 2s linear forwards; /* Inidicamos que la animacion durara 2 segundos, que sera lineal y que se quede en su estado final*/
+      }
+
+      @keyframes loader {
+        0% {
+          opacity: 1;
+          visibility: visible;
+        }
+        95% {
+          opacity: 1;
+          visibility: visible;
+        }
+        100% {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      /**
+      Animacion a cada uno de los elementos del Loader
+      */
+
+      .loader div {
+        background: rgb(255, 217, 3);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 10px;
+
+        transform: scale(0); /* Aplicamos una tranformacion */
+
+        /* Indicamos el keyframes de la animacion que vamos a utilizar en este caso: scaling*/
+        animation: scaling 2s ease-in-out infinite; /* Inidicamos que la animacion durara 2 segundos, con una aceleracion de tipo ease-in-out y que se se repetira infinitamente */
+      }
+
+      /* Tomamos el primer hijo y le aplicamo una animacion */
+      .loader div:nth-child(1) {
+        animation-delay: 0.2s; /* Tiempo de espera de la animacion */
+      }
+
+      /* Tomamos el segundo hijo y le aplicamo una animacion */
+      .loader div:nth-child(2) {
+        animation-delay: 0.4s; /* Tiempo de espera de la animacion */
+      }
+
+      /* Tomamos el tercer hijo y le aplicamo una animacion */
+      /*Nota: En caso de haber mas .loader div tendriamos que ir creando nuevos hijos*/
+      .loader div:nth-child(3) {
+        animation-delay: 0.6s; /* Tiempo de espera de la animacion */
+      }
+
+      @keyframes scaling {
+        0%,
+        100% {
+          transform: scale(0.2);
+        }
+        40% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1);
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="page">
