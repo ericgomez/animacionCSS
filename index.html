@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,100;1,300&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap');
       :root {
         --yellow: #ffd602;
         --red: #d5040a;
@@ -25,6 +25,7 @@
       .page {
         position: relative;
         height: 100vh;
+        width: 100%;
       }
 
       .container {
@@ -40,6 +41,58 @@
           'footer  aside';
         height: 100%;
         width: 100%;
+      }
+
+      /**
+      * Creacion del Navbar
+      **/
+      .navbar {
+        grid-area: nav; /* Le agregamos el grid-area*/
+        display: flex;
+      }
+
+      /* Alineamos los elementos del navbar */
+      .navbar__content {
+        display: flex; /* Aplicamos display flex*/
+        align-items: center;
+        width: 100%;
+        padding: 0 0 0 80px;
+
+        /* Indicamos el keyframes de la animacion que vamos a utilizar en este caso: navbar*/
+        animation: 2s navbar 0.5s ease-in-out; /* Inidicamos que la animacion durara 2 segundos, con una aceleracion de tipo ease-in-out y que se se demonere 0.5 segundos */
+      }
+
+      /* Realizamos un tranlado en la transformacion */
+      @keyframes navbar {
+        0% {
+          /* Realizamos el traslado en Y*/
+          transform: translateY(-200px);
+        }
+        100% {
+          /* Realizamos el traslado en Y*/
+          transform: translateY(0px);
+        }
+      }
+
+      /* Alineamos los elementos de img del navbar */
+      .navbar__content img {
+        width: 50px; /* Agregamos un tamaño para la imagen*/
+      }
+
+      /* Alineamos los elementos de ul del navbar */
+      .navbar__content ul {
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none; /* Quitamos las estilos por defecto de las listas */
+        padding: 0;
+        width: 450px;
+      }
+
+      /* Estilos los elementos de las a del ul que estan en el navbar */
+      .navbar__content ul li a {
+        color: var(--red); /*Color de fuente*/
+        font-weight: 300; /*Ancho de la fuente*/
+        text-decoration: none;
       }
 
       /* Tamaño del loader (Contenedor)*/
@@ -125,7 +178,7 @@
       <section class="container">
         <nav class="navbar">
           <div class="navbar__content">
-            <img src="" alt="" />
+            <img src="https://i.ibb.co/MMmDPXN/lego.png" alt="logo" />
             <ul>
               <li><a href="/">EXCLUSIVOS</a></li>
               <li><a href="/">NUEVOS</a></li>
@@ -145,9 +198,9 @@
         </section>
 
         <section class="side-content">
+          <div></div>
           <p>Superman</p>
           <img src="" alt="" />
-          <div></div>
         </section>
 
         <section>
