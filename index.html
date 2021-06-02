@@ -95,6 +95,53 @@
         text-decoration: none;
       }
 
+      /**
+      * Creacion del Contenido principal
+      **/
+
+      .main-content {
+        grid-area: section; /* Le agregamos el grid-area*/
+        display: flex; /* Aplicamos display flex*/
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 80px;
+
+        /* Indicamos el keyframes de la animacion que vamos a utilizar en este caso: main-content*/
+        animation: 2s main-content 0.5s ease-in-out; /* Inidicamos que la animacion durara 2 segundos, con una aceleracion de tipo ease-in-out y que se se demonere 0.5 segundos */
+      }
+
+      /* Aplicamos estilos al primer hijo de p */
+      .main-content p:first-child {
+        font-size: 36px;
+        font-weight: 300;
+        margin: 0 0 -14px 44px;
+      }
+
+      .main-content h1 {
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0 0 28px 0;
+      }
+
+      /* Aplicamos estilos al ultimo hijo de p */
+      .main-content p:last-child {
+        font-weight: 100;
+        margin: 0;
+        width: 60%;
+      }
+
+      /* Realizamos un tranlado en la transformacion */
+      @keyframes main-content {
+        0% {
+          /* Realizamos el traslado en Y*/
+          transform: translateY(-600px);
+        }
+        100% {
+          /* Realizamos el traslado en Y*/
+          transform: translateY(0px);
+        }
+      }
+
       /* Tamaño del loader (Contenedor)*/
       .loader {
         background: rgb(253, 253, 253);
