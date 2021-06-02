@@ -130,7 +130,7 @@
         width: 60%;
       }
 
-      /* Realizamos un tranlado en la transformacion */
+      /* Realizamos un traslado en la transformacion */
       @keyframes main-content {
         0% {
           /* Realizamos el traslado en Y*/
@@ -140,6 +140,74 @@
           /* Realizamos el traslado en Y*/
           transform: translateY(0px);
         }
+      }
+
+      /**
+      * Contenido lateral
+      */
+      .side-content {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        align-items: center;
+
+        grid-area: aside; /* Le agregamos el grid-area*/
+      }
+      .side-content p {
+        transform: rotate(-90deg);
+        font-size: 36px;
+
+        grid-row: 1 / 2; /* Columnas a utilizar del grid-area: aside*/
+        grid-column: 1 / 2; /* Filas a utilizar del grid-area: aside*/
+
+        opacity: 0;
+
+        /* Aplicando animacion al parrafo p */
+        animation-name: side-content-text; /* Nombre del keyframes a utilizar */
+        animation-duration: 0.5s; /* Duracion */
+        animation-delay: 2.5s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      /* Realizamos un traslado en la transformacion */
+      @keyframes side-content-text {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* Alineamos los elementos de img del navbar */
+      .side-content img {
+        width: 100%;
+        grid-column: 2 / 6; /* Columnas a utilizar del grid-area: aside*/
+        grid-row: 1 / 2; /* Filas a utilizar del grid-area: aside*/
+
+        /* Indicamos el keyframes de la animacion que vamos a utilizar en este caso: side-content-img */
+        animation: 3s side-content-img 0.5s ease-in-out; /* Inidicamos que la animacion durara 2 segundos, con una aceleracion de tipo ease-in-out y que se se demonere 0.5 segundos */
+      }
+      @keyframes side-content-img {
+        0% {
+          transform: translateY(600px);
+        }
+        75% {
+          transform: translateY(-70px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      /* Estilos del Div de fondo*/
+      .side-content div {
+        background: var(--yellow); /* Color de fondo */
+
+        grid-column: 4 / 7; /* Columnas a utilizar del grid-area: aside*/
+        grid-row: 1 / 2; /* Filas a utilizar del grid-area: aside*/
+
+        height: 100%;
       }
 
       /* Tamaño del loader (Contenedor)*/
@@ -247,7 +315,7 @@
         <section class="side-content">
           <div></div>
           <p>Superman</p>
-          <img src="" alt="" />
+          <img src="https://i.ibb.co/x16pz1x/super-man.png" alt="superman" />
         </section>
 
         <section>
