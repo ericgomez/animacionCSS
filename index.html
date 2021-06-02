@@ -210,6 +210,64 @@
         height: 100%;
       }
 
+      /**
+      * Footer
+      */
+      .footer {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+
+        background: var(--yellow);
+        border-radius: 0 80px 0 0;
+        transform: translateY(100%); /* Aplicamos una transformacion inicial necesario para keyframes */
+
+        /* Aplicando animacion al parrafo p */
+        animation-name: footer; /* Nombre del keyframes a utilizar */
+        animation-duration: 0.5s; /* Duracion */
+        animation-delay: 2.5s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      /* Realizamos un traslado en la transformacion */
+      @keyframes footer {
+        0% {
+          transform: translateY(100%);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      /*Color de fondo del div */
+      .footer div {
+        background: var(--blue);
+        width: 130px;
+        height: 50%;
+        border-radius: 20px 20px 0 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Aplicamos estilos al momento de realizar hover*/
+      .footer div:hover img {
+        cursor: pointer;
+        transform: translateY(-20px) scale(1.1);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      /* Aplicamos estilos a la imagen del footer*/
+      .footer div img {
+        width: 160px;
+        position: absolute;
+        bottom: 30px;
+
+        /* Transformacion cuando no tiene hover*/
+        transform: translateY(0px) scale(1);
+        transition: transform 0.5s ease-in-out;
+      }
+
       /* Tamaño del loader (Contenedor)*/
       .loader {
         background: rgb(253, 253, 253);
@@ -318,15 +376,15 @@
           <img src="https://i.ibb.co/x16pz1x/super-man.png" alt="superman" />
         </section>
 
-        <section>
+        <section class="footer">
           <div>
-            <img src="" alt="" />
+            <img src="https://i.ibb.co/tKWqw8J/spiderman.png" alt="spiderman" />
           </div>
           <div>
-            <img src="" alt="" />
+            <img src="https://i.ibb.co/Xzsdvgg/robin.png" alt="robin" />
           </div>
           <div>
-            <img src="" alt="" />
+            <img src="https://i.ibb.co/M18p91c/batman.webp" alt="batman" />
           </div>
         </section>
       </section>
